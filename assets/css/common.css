@@ -1,0 +1,168 @@
+@charset "utf-8";
+body{
+    line-height: 1; position: relative; margin: 0; padding: 0; font-size: 16px;
+    width: 100%; word-break: keep-all;
+}
+
+a{
+    letter-spacing: -1.5px;
+}
+
+.updown{
+    animation: motion 0.8s linear 0s infinite alternate; bottom: 42px;
+}
+@keyframes motion{
+    0%{bottom: 42px;}
+    100%{bottom: 32px;}
+}
+/*-----------------헤더부분시작-------------------*/
+
+#header{
+    width: 100%; height: 90px; position: fixed;
+    top: 0; left: 0; border-bottom:1px solid rgba(255,255,255,.35);
+    box-sizing: border-box; z-index: 9; transition: all .5s ease;
+}
+
+#nav{
+    height: 90px;
+}
+#header #nav{
+    position: relative; left: 0; top: 0;
+}
+#header #nav .inner{
+    position: relative;
+}
+.inner{
+    max-width: 1320px; margin: 0 auto;
+}
+#header #nav .logo{
+    width: 54px; height: 64px; background: url(../images/main-logo.png);
+    background: url(../images/logo.png) no-repeat;
+    
+    position: absolute; top: 13px; left: 0;
+}
+#header #nav .logo a{
+    font-size: 0; width: 54px; height: 64px;
+}
+
+#header #nav .inner > .gnb{
+    max-width: 874px; margin: 0 auto;
+}
+
+#header #nav .inner > .gnb > li{
+    width: 20%; float: left; text-align: center;
+}
+#header #nav .inner > .gnb > li > .lnb > ul.on{background:#f7f7f7;}
+#header #nav .inner > .gnb > li > .lnb > ul>li>a:hover, #header #nav .inner > .gnb > li > .lnb > ul > li > a:active, #header #nav .inner > .gnb > li > .lnb > ul > li > a:focus{font-weight:bold;}
+#header #nav .inner > .gnb > li > a{
+    font-size: 1.187rem; text-align: center; line-height: 90px; color: #fff; position: relative;
+}
+
+#header #nav .inner > .gnb > li > .lnb{
+    position: relative; display: none;
+}
+#header #nav .inner > .gnb > li > .lnb > ul{
+    width: 100%; height: 233px; top: 90px; padding: 26px 0; box-sizing: border-box; z-index: 99;
+}
+#header #nav .inner > .gnb .lnb.on{background:#f7f7f7;}
+#header #nav .inner > .gnb > li > .lnb > ul > li > a{
+    font-size: 1rem; color: #4b4b4b; display: block; line-height: 2.81;
+}
+#header #nav .quick{
+    float: right; padding-top: 32px;
+}
+#header #nav .quick li{
+    height: 32px; float: left; padding: 0 10px; border: 1px solid #ebebeb;
+    box-sizing: border-box; margin-left: 10px;
+}
+#header #nav .quick li a{
+    line-height: 32px; text-align: center; font-size: 0.812rem; display: block; color: #fff;
+}
+
+
+#header.on{
+    background: #fff; border-bottom: 1px solid #eee;   
+}
+
+#header.on #nav .inner > .gnb > li > a{
+    color: #000;
+}
+#header.fixed{
+    background: #fff;
+}
+#header.fixed #nav .gnb li a{
+    color: #000;
+}
+#header.fixed #nav .inner .logo{
+    background: url(../images/main-logo.png);
+}
+#header.fixed #nav .quick li{
+    border-color: #018801;
+}
+#header.fixed #nav .quick li a{
+    color: #018801;
+}
+
+#header.on #nav .inner .logo{
+    background: url(../images/main-logo.png);
+}
+#header.on #nav .quick li{
+    border-color: #018801;
+}
+#header.on #nav .quick li a{
+    color: #018801;
+}
+
+.bg_depth_white{
+    width: 100%; height: 233px; position: fixed; top: 90px; left: 0;  z-index: 9;
+    background-color: #fff; display: none;
+}
+
+.gnb > li > a.on::after{
+    content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #018801;
+
+}
+.gnb > li > a .lnb.on{
+    background: #bbb;
+}
+/*-----------------헤더부분종료-------------------*/
+#footer{
+    width: 100%; padding: 43px 0; background: #313131; overflow: hidden;
+}
+#footer .inner{
+    width: 1320px; margin: 0 auto; padding: 0 10px; text-align: center;
+}
+#footer .fnb{
+    display: inline-block; padding-bottom: 30px;
+}
+#footer .fnb li{
+    float: left; padding: 0 23px; position: relative;
+}
+#footer .fnb li a{
+    color: #e7e7e7;
+    font-size: 0.937rem;
+}
+#footer .fnb li a > b{
+    color: #f2d881;
+}
+#footer .fnb li::after{
+    content: ""; top: 0; right: 0; position: absolute; width: 1px; height: 12px; background: #e7e7e7;
+}
+#footer .fnb li:nth-child(4)::after{
+    content: none;
+}
+#footer address{
+    clear: both; font-style: normal; padding-bottom: 9px;
+}
+#footer address span{
+    color: #e7e7e7; font-size: 0.875rem;
+}
+#footer .copy{
+    color: #a2a2a2; font-size: 0.937rem;
+}
+#footer .copy b{
+    color: #c7c7c7;
+}
+#footer button#go-top{
+    height: 60px; position: absolute; right: 296px; bottom: 147px; overflow: hidden;
+}

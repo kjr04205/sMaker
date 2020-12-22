@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" style="min-width: 1920px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크린파크골프시스템</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+</head>
+
+<body>
+    <form action="myInfoForm" method="post">
+        <input type="hidden" name="loginStatus">
+        <input type="hidden" name="mb_id">
+    </form>
+    <div class="bg_depth_white"></div>
+    <!-- 헤더부분 시작 -->
+    <div id="header">
+        <nav id="nav">
+            <div class="inner">
+                <h1 class="logo" id="logo">
+                    <a href="#link">에스메이커로고</a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="#link">회사소개</a>
+                        <div class="lnb" id="lnb">
+                            <ul>
+                                <li><a href="#link">S-메이커</a></li>
+                                <li><a href="#link">조직구성</a></li>
+                                <li><a href="#link">찾아오시는길</a></li>
+                            </ul>
+                        </div>          
+                    </li>
+                    <li>
+                        <a href="#link">제품소개</a>
+                        <div class="lnb" id="lnb">
+                            <ul>
+                                <li><a href="#link">스크린파크골프</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#link">교육프로그램</a>
+                        <div class="lnb" id="lnb">
+                            <ul>
+                                <li><a href="#link">프로그램 소개</a></li>
+                                <li><a href="#link">교육신청</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#link">홍보센터</a>
+                        <div class="lnb" id="lnb">
+                            <ul>
+                                <li><a href="#link">홍보영상</a></li>
+                                <li><a href="#link">보도자료</a></li>
+                                <li><a href="#link">포토갤러리</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#link">커뮤니티</a>
+                        <div class="lnb" id="lnb">
+                            <ul>
+                                <li><a href="#link">공지사항</a></li>
+                                <li><a href="#link">자유게시판</a></li>
+                                <li><a href="#link">고객센터</a></li>
+                                <li><a href="#link">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="quick" id="quick">
+                    <li>
+                        <a href="#link">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="#link">로그인</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- 헤더 색상 변경 -->
+    <script>
+        $(document).ready(function(){
+            $(".gnb li").mouseenter(function(){
+                $("#header").addClass('on');
+                $(".bg_depth_white").stop().slideDown(200);
+                $(".lnb").stop().slideDown(200);
+
+                $(this).children("a").mouseenter(function(){
+                    $(this).addClass('on');
+                    $(this).next().addClass('on');
+                });
+            });
+                
+            $(".gnb li").mouseout(function(){
+                $("#header").removeClass('on');
+                $(".bg_depth_white").stop().slideUp(200);
+                $(".lnb").stop().slideUp(200);
+                
+                $(this).children("a").mouseleave(function(){
+                    $(this).removeClass('on');
+                    $(this).next().removeClass('on');
+                });
+            });
+
+            $(".gnb li a").focus(function(){
+                $("#header").addClass('on');
+                $(".bg_depth_white").stop().slideDown(200);
+                $(".lnb").stop().slideDown(200);
+                $(this).addClass('on');
+                $(this).next().addClass('on');
+            }).blur(function(){
+                    $("#nav").stop().animate({height:headerMin},speed);
+                    $(".lnb").stop().slideUp(speed);
+                    $(this).removeClass('on');
+                    $(this).next().removeClass('on');
+                    $("#header").removeClass("fixed");
+                    $(".bg_depth_white").stop().slideUp(270).removeClass("on");
+                });	
+                
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                if(scroll>90){
+                    $("#header").addClass('fixed');
+                }
+                else{
+                    $("#header").removeClass('fixed');
+                }
+            });
+        });
+    </script>
+    <!-- 헤더부분 종료 -->
+    <!-- 메인베너 부분 시작 -->
+    <section>
+        <div id="main">
+            <!-- s: visual -->
+            <div id="visual">
+                <div class="vis__tit">
+                    <span class="vis__tit--text1">최신의 스크린 골프 문화를 만나는 곳</span>
+                    <span class="vis__tit--text2">
+                        screen golf<br>
+                        culture
+                    </span>
+                    <span class="vis__tit--line"></span>
+                    <span class="vis__tit--text3">골퍼의 꿈이 현실이 되고 언제나 새로운 즐거움이 만들어지는 곳
+                        스크린 파크골프<br> 에스메이커가 또 한번 세상에 없던 골프를 만들어 갑니다.
+                    </span>
+                </div>
+                <div class="scroll updown">
+                    <img src="../assets/images/scroll.png" alt="스크롤다운 이미지">
+                </div>
+            </div>
+            <!-- e: visual -->
+
+            <!-- s: survice-->
+            <div id="sec01" class="survice">
+                <div class="inner">
+                    <div class="sec__tit">
+                        <span class="sec__tit--line"></span>
+                        <h2 class="sec__tit--h2">SURVICE</h2>
+                        <p class="sec__tit--p">서비스 바로가기</p>
+                    </div>
+                    <div class="area">
+                        <dl class="box">
+                            <dt>홍보영상</dt>
+                            <dd>스크린 파크 골프의 영상을 시청해보세요</dd>
+                            <p class="more">
+                                <a href="#">VIEW MORE</a>
+                            </p>
+                        </dl>
+                        <dl class="box">
+                            <dt>제품소개</dt>
+                            <dd>스크린 파크 골프 제품 선택을 위한 필수 코스</dd>
+                            <p class="more">
+                                <a href="#">VIEW MORE</a>
+                            </p>
+                        </dl>
+                        <dl class="box">
+                            <dt>교육안내</dt>
+                            <dd>스크린 파크 골프의 교육 프로그램을 소개합니다</dd>
+                            <p class="more">
+                                <a href="#">VIEW MORE</a>
+                            </p>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- s:story :: 시스템소개 -->
+        <div id="sec02"  class="story swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide sld-r">
+                    <img src="../assets/images/sld-sroty-bg.jpg" />
+                    <div class="sec-tit swiper-bg">
+                        <p class="s-title">SYSTEM STORY</p>
+                        <h2 class="b-title">스크린파크골프 시스템 소개</h2>
+                        <p class="d-title">
+                            날씨, 장소 등의 구애를 받지 않는 실내 스크린 스포츠로 실제<br />
+                            파크골프장을 토대로 현실감 있는 가상의 3D맵을 제공합니다.<br />
+                            남녀노소 구분 없이 거주지 인근에서 누구나 참여 가능한 스포츠 공간을<br />
+                            제공하여 사회적 교류에 대한 기회 증가와 삶의 만족도를 향상 하고자 합니다.
+                        </p>
+
+                        <button class="btn-more">
+                            VIEW MORE
+                            <i class="line1"></i>
+                            <i class="line2"></i>
+                            <i class="line3"></i>
+                            <i class="line4"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide">
+                    <img src="../assets/images/sld-smaker-bg.jpg" />
+                    <div class="sec-tit swiper-bg">
+                        <p class="s-title">S-MAKER STORY</p>
+                        <h2 class="b-title">S-MAKER 소개</h2>
+                        <p class="d-title">
+                            ㈜에스메이커는 스크린파크골프시스템, 시스템통합(System Intergration),<br />
+                            컨설팅, IT아웃소싱, 시스템 유지보수 등 IT 전반에 걸친 Total 서비스를<br />
+                            제공합니다. 이처럼 다양한 분야에서 최고 수준의 정보기술 서비스를 고객의<br />
+                            환경에 가장적합한 형태로 제공하고 있습니다.
+                        </p>
+
+                        <button class="btn-more">
+                            VIEW MORE
+                            <i class="line1"></i>
+                            <i class="line2"></i>
+                            <i class="line3"></i>
+                            <i class="line4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- s:화살표 -->
+            <div class="swiper-button-prev"><img src="../assets/images/sld-arrow-l.png" alt="왼쪽 화살표"></div>
+            <div class="swiper-button-next"><img src="../assets/images/sld-arrow-r.png" alt="오른쪽 화살표"></div>
+        </div>
+        <!-- e:story :: 시스템소개 -->
+            <div id="sec03" class="notice">
+                <div class="inner">
+                    <div class="sec-tit">
+                        <h2 class="b-title">NOTICE</h2>
+                        <p class="s-title">공지사항</p>
+                    </div>
+                    <div class="area">
+                        <div class="notice-table">
+                            <div class="list">
+                                <div class="b-tit">
+                                    <a href="#">국내 최초 스크린 파크골프 시스템 개발</a>
+                                    <span class="new">NEW</span>
+                                </div>
+                                <time class="data">
+                                    <p>23</p>
+                                    <span>2020-09</span>
+                                </time>
+                            </div>
+                            <div class="list">
+                                <div class="b-tit">
+                                    <a href="#">국내 최초 스크린 파크골프 시스템 개발</a>
+                                    <span class="new">NEW</span>
+                                </div>
+                                <time class="data">
+                                    <p>23</p>
+                                    <span>2020-09</span>
+                                </time>
+                            </div>
+                            <div class="list">
+                                <div class="b-tit">
+                                    <a href="#">국내 최초 스크린 파크골프 시스템 개발</a>
+                                    
+                                </div>
+                                <time class="data">
+                                    <p>23</p>
+                                    <span>2020-09</span>
+                                </time>
+                            </div>
+                        </div>
+                        <div class="btn-more">
+                            <span class="btn32">
+                                <button class="line01 line02" href="#">
+                                    LEARN MORE
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sec04" class="ad-shop">
+                <div class="inner">
+                    <div class="shop-tit">
+                        <h3>스크린 파크 골프 쇼핑몰</h3>
+                        <p>다양한 스크린파크골프 제품을 만나보세요</p>
+                    </div>
+                    <button class="btn-go" onclick="javascript:alert('준비중입니다.');">바로가기</button>
+                </div>
+            </div>
+            <div id="sec05" class="scroller">
+                <div class="promotion">
+                    <div class="sec-tit">
+                        <img src="../assets/images/promotion-title.png" alt="">
+                        <p>다양한 스크린파크골프 제품을 에스메이커에서 만나보세요</p>
+                    </div>
+                    <div class="btn-more">
+                        <button type="button" class="btn24" onclick="">
+                            홍보센터 바로가기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="sec06" class="cs-center">
+                <div class="inner">
+                    <div class="tel">
+                        <dl>
+                            <dt>고객센터문의</dt>
+                            <dd>1833-8906</dd>
+                        </dl>
+                    </div>
+                    <div class="time">
+                        <dl>
+                            <dt>평일</dt>
+                            <dd>am09:00 - pm18:00</dd>
+                        </dl>
+                    </div>
+                    <p>공휴일은 게시판을 이용해주세요</p>
+                </div>
+            </div>
+            <!-- e: survice-->
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="fnb">
+                <li><a href="#"><b>개인정보처리방침</b></a></li>
+                <li><a href="#" style="color: #e7e7e7;">이메일주소 무단수집거부</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">저작권정책</a></li>
+            </ul>
+            <address>
+                <span>사업자등록번호 : 479-86-00291</span>
+                <span>대표 : ○○○</span>
+                <span>대표전화 : 1833-8906</span>
+                <span>주소 : 경상북도 포항시 남구 지곡로 394 (재)포항테크노파크 포항SW지원센터</span>
+            </address>
+            <p class="copy">
+                COPYRIGHT(C) 2020 BY
+                <b>(주)에스메이커</b>
+                ALL RIGHTS RESERVED
+            </p>
+        </div>
+        <button type="button" id="go-top" onclick="window.scrollTo(0,0);">
+            <img src="../assets/images/top.png" alt="">
+        </button>
+    </footer>
+    <!-- 메인베너 부분 종료 -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+        });
+      </script>
+</body>
+</html>
+
+
